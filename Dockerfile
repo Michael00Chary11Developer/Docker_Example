@@ -1,9 +1,11 @@
-FROM python:3.10
+FROM python:3.9
 
 WORKDIR /app
 
-COPY requirement.txt main.py /app/
+COPY requirement.txt /app/
 
 RUN pip install --no-cache-dir -r requirement.txt
+
+VOLUME [ "/app/data" ]
 
 CMD ["python","main.py"]
